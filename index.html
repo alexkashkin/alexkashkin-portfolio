@@ -4,14 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Kashkin</title>
+    <meta name="description" content="Alex Kashkin - Engineer and researcher specializing in AI-assisted art restoration, semiconductors, diagnostics, and space propulsion.">
+    <title>Alex Kashkin - Engineer & Researcher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --subtext: #d7d7d7;
+            --bg: #000;
+            --text: #fff;
+            --accent: #003078;
+            --border: #222;
+            --light-bg: #fff;
+            --mauve: #3a2f42;
         }
 
         * {
@@ -21,234 +26,459 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .inverted {
-            background-color: none;
-            color: var(--bg);
-        }
-
-        .inverted p {
-            background-color: none;
-            color: var(--bg);
+            line-height: 1.6;
         }
 
         section {
-            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 10vw;
+            min-height: 90vh;
             text-align: center;
-            border-bottom: 1px solid #222222;
+            border-bottom: 1px solid var(--border);
         }
 
+        section.hero {
+            background-size: cover;
+            background-position: 50% 40%;
+            background-attachment: fixed;
+            color: var(--bg);
+            height: 90vh;
+        }
+
+        section.hero h1,
+        section.hero p {
+            color: var(--bg);
+        }
+
+        section.hero a {
+            color: var(--accent);
+        }
+
+        section.light-bg {
+            background-color: var(--light-bg);
+            color: var(--bg);
+        }
+
+        section.dark-mauve {
+            background-color: var(--mauve);
+        }
+
+        section.two-column {
+            flex-direction: row;
+            height: auto;
+            min-height: 90vh;
+            gap: 0;
+        }
+
+        section.two-column > div {
+            flex: 1;
+        }
+
+        section.two-column .text-col {
+            display: flex;
+            align-items: center;
+            padding: 5vw;
+        }
+
+        section.two-column .image-col {
+            overflow: hidden;
+        }
+
+        section.two-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content container */
         .content {
             max-width: 700px;
             margin-top: 2rem;
         }
 
+        /* Typography */
         h1 {
             font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
         p {
             font-size: 1.25rem;
-            color: var(--subtext);
+            color: var(--text);
             margin-top: 1rem;
         }
 
-        .image-container {
-            width: 100%;
-            max-width: 1000px;
-            height: 50vh;
-            margin-top: 3rem;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #000000;
+        section.light-bg p {
+            color: var(--bg);
         }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease-in-out;
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid currentColor;
         }
 
-        footer {
-            padding: 10vh 5vw;
-            text-align: center;
-            color: var(--subtext);
+        a:hover {
+            opacity: 0.8;
         }
 
-        .hero-section {
-            height: 90vh;
-            background-size: cover;
-            background-position: 50% 50%;
+        a:has(img) {
+            border-bottom: none;
         }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                background-position: 30% 0%;
-                display: flex;
-            }
+        section.light-bg a {
+            color: var(--accent);
         }
 
-        .marquee-wrapper {
-            width: 100%;
-            max-width: 90vw;
-            overflow: hidden;
-            position: relative;
-            background: #ffffff;
-            padding: 30px 0;
-        }
-        
-        .marquee-content {
-            display: flex;
-            width: max-content;
-            flex-wrap: nowrap;
-            animation: scroll 20s linear infinite;
+        .simple-english {
+            font-style: italic;
+            opacity: 0.85;
         }
 
-        .marquee-content img {
-            height: 150px;
+        /* Hero section specific */
+        .hero .hero-content {
+            margin-left: 20vw;
+            margin-bottom: 5vh;
         }
 
-        @keyframes scroll {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
+        .hero .content {
+            margin-top: 0;
         }
 
-        .marquee-wrapper:hover .marquee-content {
-            animation-play-state: paused;
+        /* Lists */
+        ul {
+            list-style: none;
+            margin-top: .5rem;
+            text-align: left;
+            display: inline-block;
         }
 
         .talk-item {
             margin: 1rem 0;
             font-size: 1.1rem;
         }
+
+        /* Marquee section */
+        .marquee-wrapper {
+            width: 100%;
+            max-width: 90vw;
+            overflow: hidden;
+            position: relative;
+            background: var(--light-bg);
+            padding: 30px 0;
+            margin-top: 5vh;
+            border-radius: 8px;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            flex-wrap: nowrap;
+            gap: 20px;
+            padding: 0 20px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .marquee-content a {
+            display: flex;
+            align-items: center;
+            border: none;
+        }
+
+        .marquee-content img {
+            height: 120px;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-100% - 20px)); }
+        }
+
+        .marquee-wrapper:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        footer {
+            padding: 5rem 5vw;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                padding: 5vw;
+                min-height: auto;
+            }
+
+            section.hero {
+                background-position: 30% 0%;
+            }
+
+            section.two-column {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .hero .hero-content {
+                margin-left: 25vw;
+            }
+
+            h1 {
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .content {
+                max-width: 100%;
+            }
+
+            ul {
+                display: block;
+                text-align: center;
+            }
+
+            .marquee-content {
+                gap: 10px;
+            }
+
+            .marquee-content img {
+                height: 80px;
+            }
+
+            .talk-item {
+                font-size: 1rem;
+            }
+
+            section.two-column .text-col {
+                padding: 3vw;
+            }
+
+            footer {
+                padding: 3rem 5vw;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <section class="hero-section" style="background-image: url('images/alex-kashkin.jpg')">
-        <div class="inverted content" style="margin-left: 30vw; margin-bottom: 20vh">
-            <h1>Hi, I'm Alex, an engineer</h1>
-            <p class="inverted">Currently scaling AI-assisted paintings restoration.
-            </p>
-            <p class="inverted"><a href="mailto:alexkashkin@gmail.com" style="color:rgb(0, 48, 120)">Contact me</a></p>
-        </div>
-    </section>
+    <header>
+        <section class="hero" id="hero" style="background-image: url('images/alex-kashkin.jpg')">
+            <div class="content hero-content">
+                <h1>Hi, I'm Alex, an engineer</h1>
+                <p>Currently scaling AI-assisted paintings restoration.</p>
+                <p><a href="mailto:alexkashkin@gmail.com">Contact me</a></p>
+            </div>
+        </section>
+    </header>
 
-    <section>
-        <div class="content">
-            <h1>Partners and angels;</h1>
-            <p>We are currently raising and have room for a few more folks.</p>
-            <h1 style="margin-top: 10vh">Upcoming invited talks</h1>
-            <ul style="list-style: none; margin-top: 2rem; text-align: left; display: inline-block;">
-                <li class="talk-item">EDI Global Forum, Naples, Italy: March 18-20, 2026</li>
-                <li class="talk-item">AIC Annual Meeting, Montréal, Canada: April 28-May 2,
-                    2026</li>
-                <li class="talk-item">Digital Innovations in Cultural Heritage Preservation,
-                    Paris, France: June 15-16, 2025</li>
-                <li class="talk-item">Gordon Research Conference, Les Diablerets, Switzerland:
-                    July 12-17, 2026</li>
-                <li class="talk-item">CRAC, Barcelona, Spain: 19-20 November 2026</li>
-            </ul>
-        </div>
-    </section>
+    <main>
+        <section id="opportunities">
+            <div class="content">
+                <h1>Partners and angels</h1>
+                <p>We are currently raising and have room for a few more folks.</p>
+                <h2>Upcoming invited talks</h2>
+                <ul>
+                    <li class="talk-item">EDI Global Forum, Naples, Italy: March 18-20, 2026</li>
+                    <li class="talk-item">AIC Annual Meeting, Montréal, Canada: April 28-May 2, 2026</li>
+                    <li class="talk-item">Digital Innovations in Cultural Heritage Preservation, Paris, France: June 15-16, 2025</li>
+                    <li class="talk-item">Gordon Research Conference, Les Diablerets, Switzerland: July 12-17, 2026</li>
+                    <li class="talk-item">CRAC, Barcelona, Spain: 19-20 November 2026</li>
+                </ul>
+            </div>
+        </section>
 
-    <section style="background-color: white">
-        <div class="content inverted">
-            <h1>My oeuvre</h1>
-            <p>I have made fundamental contributions to semiconductor fabrication, diagnostic devices, art restoration,
-                space propulsion, and
-                other fields.</p>
-            <p>Some of my research was <a href="https://scholar.google.com/citations?user=lV0oWY4AAAAJ&hl=en"
-                    style="color: rgb(0, 48, 120);">published</a>.
-                Some of my efforts made headlines:
-            </p>
-            <div class="marquee-wrapper" style="margin-top:5vh">
-                <div class="marquee-content">
-                    <a href="https://www.nytimes.com/2025/08/22/world/europe/art-restoration-ai-innovation.html"
-                        target="_blank">
-                        <img src="images/nyt.png" alt="NYT">
-                    </a>
-                    <a href="https://www.cnn.com/2025/08/26/style/video/art-ai-restoration-digital-mask-digvid"
-                        target="_blank">
-                        <img src="images/cnn.png" alt="CNN">
-                    </a>
-                    <a href="https://www.theguardian.com/science/2025/jun/11/researchers-create-ai-based-tool-that-restores-age-damaged-artworks-in-hours"
-                        target="_blank">
-                        <img src="images/guardian.png" alt="Guardian">
-                    </a>
-                    <a href="https://www.cbsnews.com/boston/video/mit-engineers-develop-mask-to-repair-aging-artwork/"
-                        target="_blank">
-                        <img src="images/cbs.png" alt="CBS">
-                    </a>
-                    <a href="https://www.telegraph.co.uk/news/2025/06/11/artificial-intelligence-can-restore-artworks-quicker-better/"
-                        target="_blank">
-                        <img src="images/telegraph.png" alt="Telegraph">
-                    </a>
-                    <a href="https://spectrum.ieee.org/digital-art-restoration-mask" target="_blank">
-                        <img src="images/ieee.png" alt="IEEE">
-                    </a>
+        <section id="achievements" class="light-bg">
+            <div class="content">
+                <h1>My oeuvre</h1>
+                <p>I have made fundamental contributions to semiconductor fabrication, diagnostic devices, art restoration, space propulsion, and other fields.</p>
+                <p>Some of my research was <a href="https://scholar.google.com/citations?user=lV0oWY4AAAAJ&hl=en">published</a>. Some of my efforts made headlines:</p>
+                <div class="marquee-wrapper">
+                    <div class="marquee-content">
+                        <a href="https://www.nytimes.com/2025/08/22/world/europe/art-restoration-ai-innovation.html" target="_blank">
+                            <img src="images/nyt.png" alt="New York Times">
+                        </a>
+                        <a href="https://www.cnn.com/2025/08/26/style/video/art-ai-restoration-digital-mask-digvid" target="_blank">
+                            <img src="images/cnn.png" alt="CNN">
+                        </a>
+                        <a href="https://www.theguardian.com/science/2025/jun/11/researchers-create-ai-based-tool-that-restores-age-damaged-artworks-in-hours" target="_blank">
+                            <img src="images/guardian.png" alt="Guardian">
+                        </a>
+                        <a href="https://www.cbsnews.com/boston/video/mit-engineers-develop-mask-to-repair-aging-artwork/" target="_blank">
+                            <img src="images/cbs.png" alt="CBS">
+                        </a>
+                        <a href="https://www.techexplorist.com/scientists-3d-printed-miniature-ionizer-vital-component-mass-spectrometer/82792/" target="_blank">
+                            <img src="images/techexplorist.png" alt="Tech Explorist">
+                        </a>
+                        <a href="https://www.telegraph.co.uk/news/2025/06/11/artificial-intelligence-can-restore-artworks-quicker-better/" target="_blank">
+                            <img src="images/telegraph.png" alt="Telegraph">
+                        </a>
+                        <a href="https://spectrum.ieee.org/digital-art-restoration-mask" target="_blank">
+                            <img src="images/ieee.png" alt="IEEE">
+                        </a>
+                        <a href="https://www.nature.com/articles/d41586-025-01776-8" target="_blank">
+                            <img src="images/nature.png" alt="Nature">
+                        </a>
+                        <a href="https://www.wevolver.com/article/how-precision-3d-printing-enables-miniaturized-electric-space-propulsion" target="_blank">
+                            <img src="images/wevolver.png" alt="Wevolver">
+                        </a>
+                        <a href="https://arstechnica.com/ai/2025/06/mit-student-prints-ai-polymer-masks-to-restore-paintings-in-hours/" target="_blank">
+                            <img src="images/arstechnica.png" alt="ars technica">
+                        </a>
+                        <a href="https://www.smithsonianmag.com/smart-news/graduate-student-develops-an-ai-based-approach-to-restore-time-damaged-artwork-to-its-former-glory-180986799/" target="_blank">
+                            <img src="images/smithsonian.png" alt="Smithsonian">
+                        </a>
+                        <a href="https://www.hackster.io/news/this-3d-printed-electrospray-source-could-deliver-low-cost-at-home-sample-analysis-69d2404fe262" target="_blank">
+                            <img src="images/hackster.png" alt="Hackster">
+                        </a>
+                        <a href="https://www.beauxarts.com/grand-format/restaurer-un-tableau-en-3-heures-la-technique-etonnante-dun-ingenieur-du-mit-avec-lia/" target="_blank">
+                            <img src="images/beauxarts.png" alt="Beaux Arts">
+                        </a>
+                        <a href="https://www.theartnewspaper.com/2025/07/04/mechanical-engineer-develops-ai-generated-digital-masks-to-restore-damaged-paintings" target="_blank">
+                            <img src="images/theartnewspaper.png" alt="The Art Newspaper">
+                        </a>
+                        <a href="https://www.abc.es/cultura/arte/mascara-digital-creada-ia-consigue-restaurar-obras-20250614183608-nt.html" target="_blank">
+                            <img src="images/abc.png" alt="ABC">
+                        </a>
+                        <a href="https://www.voxelmatters.com/mit-3d-prints-point-of-care-mass-spectrometer-components/" target="_blank">
+                            <img src="images/voxelmatters.png" alt="Voxel Matters">
+                        </a>
+                        <a href="https://elpais.com/tecnologia/2025-06-11/una-calcomania-creada-con-inteligencia-artificial-restaura-cuadros-de-hace-siglos.html" target="_blank">
+                            <img src="images/elpais.png" alt="El País">
+                        </a>
+                        <a href="https://news.artnet.com/art-world/ai-art-restoration-conservation-mit-2656171" target="_blank">
+                            <img src="images/artnet.png" alt="ArtNet">
+                        </a>
+                        <a href="https://news.mit.edu/2025/restoring-damaged-paintings-using-ai-generated-mask-0611" target="_blank">
+                            <img src="images/mitnews.png" alt="MIT News">
+                        </a>
+                        <a href="https://www.tagesspiegel.de/wissen/alte-schatze-in-neuem-glanz-software-und-drucker-restaurieren-gemalde-13828702.html" target="_blank">
+                            <img src="images/tagesspiegel.png" alt="Tagesspiegel">
+                        </a>
+                        <a href="https://www.artmajeur.com/en/magazine/2-art-news/repair-a-painting-in-3-hours-mit-did-it-with-ai/338434" target="_blank">
+                            <img src="images/artmajeur.png" alt="ArtMajeur">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=LxRK-qweVsY" target="_blank">
+                            <img src="images/newscientist.png" alt="New Scientist">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section style="flex-direction: row; height: auto; min-height: 90vh;">
-        <div style="flex: 1; display: flex; align-items: center; padding: 5vw;">
-            <div class="content" style="margin-top: 0; text-align: left;">
-                <h1>Art restoration</h1>
-                <p>Rigorously ethical masking of damages through AI-assisted design of sub-100 micron membranes on oil
-                    paintings.</p>
-                <p>
-                    <a href="https://rdcu.be/eqx3a"
-                        style="color: var(--subtext); text-decoration: none; border-bottom: 1px solid var(--subtext);">Free-access
-                        Nature article</a>
-                </p>
-                <p>Simple English: Restoring paintings with stickers.
-                </p>
+        <section id="art-restoration" class="two-column">
+            <div class="text-col">
+                <div class="content">
+                    <h1>Art restoration</h1>
+                    <p>Ethically masking human-perceivable lacunae with AI-assisted digital inpainting and sub-100 micron laminate membranes.</p>
+                    <p><a href="https://rdcu.be/eqx3a" style="color: #fff; border-bottom-color: #fff;">Free-access Nature article</a></p>
+                    <p><span class="simple-english">Simple English: Restoring paintings with stickers.</span></p>
+                </div>
             </div>
-        </div>
-        <div style="flex: 1; overflow: hidden;">
-            <img src="images/nature-cover.png" alt="Masked art restoration"
-                style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-    </section>
+            <div class="image-col">
+                <a href="https://www.nature.com/nature/volumes/642/issues/8067" target="_blank">
+                    <img src="images/nature-cover.png" alt="Masked art restoration example">
+                </a>
+            </div>
+        </section>
 
-    <section style="background-color: white">
-        <div class="content inverted">
-            <h1>Degrees</h1>
-            <div style="margin-top: 2rem; text-align: left;">
-                <h2 style="font-size: 1.5rem;">MIT</h2>
-                <p>Master’s in Mechanical Engineering (June 2023)</p>
-                <p>PhD in Mechanical Engineering (drop out 2025)</p>
+        <section id="semiconductors" class="two-column dark-mauve">
+            <div class="image-col">
+                <a href="http://doi.org/10.1109/IVNC57695.2023.10188962" target="_blank">
+                    <img src="images/epl.png" alt="Semiconductor electron source visualization">
+                </a>
+            </div>
+            <div class="text-col">
+                <div class="content">
+                    <h1>Semiconductors</h1>
+                    <p>Next-gen electron projection lithography with 3d-printed, carbon nanotube-coated convex field emission sources.</p>
+                    <p><span class="simple-english">Simple English: Making computers by shooting electrons from tiny needles.</span></p>
+                </div>
+            </div>
+        </section>
 
-                <h2 style="font-size: 1.5rem; margin-top: 2rem;">UT Austin</h2>
-                <p>Bachelor’s of Science in Mechanical Engineering (June 2021)</p>
-                <p>Bachelor’s of Arts in Economics (June 2021)</p>
-            </div><br><br>
-            <p>Note: I go by Alex Kashkin and Alex Kachkine. The latter, un-pronounceable legal spelling is due to the
-                French,
-                and I apologize on their behalf.</p>
-        </div>
-    </section>
+        <section id="diagnostics" class="two-column light-bg">
+            <div class="text-col">
+                <div class="content">
+                    <h1>Diagnostics</h1>
+                    <p>GeneTiger: a point-of-care nucleic acid testing device based on loop-mediated amplification.</p>
+                    <p><span class="simple-english">Simple English: Less annoying medical tests.</span></p>
+                </div>
+            </div>
+            <div class="image-col">
+                <a href="https://genetiger.com" target="_blank">
+                    <img src="images/genetiger.jpg" alt="GeneTiger diagnostic device">
+                </a>
+            </div>
+        </section>
+
+        <section id="space-propulsion" class="two-column">
+            <div class="image-col">
+                <a href="http://doi.org/10.1109/PowerMEMS56853.2022.10007579" target="_blank">
+                    <img src="images/neutralizers.png" alt="Ion thruster neutralization field">
+                </a>
+            </div>
+            <div class="text-col">
+                <div class="content">
+                    <h1>Space Propulsion</h1>
+                    <p>Ion thruster neutralization via printed ink circuit traces.</p>
+                    <p><span class="simple-english">Simple English: Plumbing for satellite engines.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ionization" class="two-column dark-mauve">
+            <div class="text-col">
+                <div class="content">
+                    <h1>Ionization</h1>
+                    <p>Zinc oxide nanowire-based electrospray for homogenous ionization of targets in mass spectrometry.</p>
+                    <p><span class="simple-english">Simple English: Turning blood into tiny droplets and throwing them near a magnet.</span></p>
+                </div>
+            </div>
+            <div class="image-col">
+                <a href="https://doi.org/10.1021/jasms.3c00409" target="_blank">
+                    <img src="images/jasms-cover.jpg" alt="JASMS journal cover">
+                </a>
+            </div>
+        </section>
+
+        <section id="education" class="light-bg">
+            <div class="content">
+                <h1>Degrees</h1>
+                <div>
+                    <h2>MIT</h2>
+                    <p>Master's in Mechanical Engineering (June 2023)</p>
+                    <p>PhD in Mechanical Engineering (drop out 2025)</p>
+
+                    <h2>UT Austin</h2>
+                    <p>Bachelor's of Science in Mechanical Engineering (June 2021)</p>
+                    <p>Bachelor's of Arts in Economics (June 2021)</p>
+                </div>
+                <p style="margin-top: 4rem;">Note: You will find my last named spelled as either Kashkin and Kachkine. The latter, un-pronounceable legal spelling is due to the French, and I apologize on their behalf.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Alex Kashkin</p>
