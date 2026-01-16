@@ -1,6 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Kashkin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #ffffff;
+            --subtext: #d7d7d7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .inverted {
+            background-color: none;
+            color: var(--bg);
+        }
+
+        .inverted p {
+            background-color: none;
+            color: var(--bg);
+        }
+
+        section {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10vw;
+            text-align: center;
+            border-bottom: 1px solid #222222;
+        }
+
+        .content {
+            max-width: 700px;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: var(--subtext);
+            margin-top: 1rem;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 50vh;
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000000;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        footer {
+            padding: 10vh 5vw;
+            text-align: center;
+            color: var(--subtext);
+        }
+
+        .hero-section {
+            height: 90vh;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                background-position: 30% 0%;
+                display: flex;
+            }
+        }
+
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            white-space: nowrap;
+            padding: 40px 0;
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            height: 150px;
+            gap: 50px;
+            animation: scroll 30s linear infinite;
+        }
+
+        .marquee-content img {
+            height: 150px;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-wrapper:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        .talk-item {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
 <body>
-    <h1>Hello World</h1>
+    <section class="hero-section" style="background-image: url('images/alex-kashkin.jpg')">
+        <div class="inverted content" style="margin-left: 30vw; margin-bottom: 20vh">
+            <h1>Hi, I'm Alex, an engineer</h1>
+            <p class="inverted">Currently scaling AI-assisted paintings restoration.
+            </p>
+            <p class="inverted"><a href="mailto:alexkashkin@gmail.com" style="color:rgb(0, 48, 120)">Contact me</a></p>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <h1>Partners and angels;</h1>
+            <p>We are currently raising and have room for a few more folks.</p>
+            <h1 style="margin-top: 10vh">Upcoming invited talks</h1>
+            <ul style="list-style: none; margin-top: 2rem; text-align: left; display: inline-block;">
+                <li class="talk-item">EDI Global Forum, Naples, Italy: March 18-20, 2026</li>
+                <li class="talk-item">AIC Annual Meeting, Montréal, Canada: April 28-May 2,
+                    2026</li>
+                <li class="talk-item">Digital Innovations in Cultural Heritage Preservation,
+                    Paris, France: June 15-16, 2025</li>
+                <li class="talk-item">Gordon Research Conference, Les Diablerets, Switzerland:
+                    July 12-17, 2026</li>
+                <li class="talk-item">CRAC, Barcelona, Spain: 19-20 November 2026</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="background-color: white">
+        <div class="content inverted">
+            <h1>My oeuvre</h1>
+            <p>I have made fundamental contributions to semiconductor fabrication, diagnostic devices, art restoration,
+                space propulsion, and
+                other fields.</p>
+            <p>Some of my research was <a href="https://scholar.google.com/citations?user=lV0oWY4AAAAJ&hl=en"
+                    style="color: var(--bg); text-decoration: none; border-bottom: 1px solid var(--subtext);">published</a>.
+                Some of my efforts made headlines:
+            </p>
+            <div class="marquee-wrapper" style="margin-top:5vh">
+                <div class="marquee-content">
+                    <a href="https://www.nytimes.com/2025/08/22/world/europe/art-restoration-ai-innovation.html" target="_blank">
+                        <img src="images/nyt.png" alt="NYT">
+                    </a>
+                    <a href="https://www.cnn.com/2025/08/26/style/video/art-ai-restoration-digital-mask-digvid" target="_blank">
+                        <img src="images/cnn.png" alt="CNN">
+                    </a>
+                    <a href="https://www.theguardian.com/science/2025/jun/11/researchers-create-ai-based-tool-that-restores-age-damaged-artworks-in-hours" target="_blank">
+                        <img src="images/guardian.png" alt="Guardian">
+                    </a>
+                    <a href="https://www.cbsnews.com/boston/video/mit-engineers-develop-mask-to-repair-aging-artwork/" target="_blank">
+                        <img src="images/cbs.png" alt="CBS">
+                    </a>
+                    <a href="https://www.telegraph.co.uk/news/2025/06/11/artificial-intelligence-can-restore-artworks-quicker-better/" target="_blank">
+                        <img src="images/telegraph.png" alt="Telegraph">
+                    </a>
+                    <a href="https://spectrum.ieee.org/digital-art-restoration-mask" target="_blank">
+                        <img src="images/ieee.png" alt="IEEE">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="flex-direction: row; height: auto; min-height: 90vh;">
+        <div style="flex: 1; display: flex; align-items: center; padding: 5vw;">
+            <div class="content" style="margin-top: 0; text-align: left;">
+                <h1>Art restoration</h1>
+                <p>Rigorously ethical masking of damages through AI-assisted design of sub-100 micron membranes on oil
+                    paintings.</p>
+                <p>
+                    <a href="https://rdcu.be/eqx3a"
+                        style="color: var(--subtext); text-decoration: none; border-bottom: 1px solid var(--subtext);">Free-access
+                        Nature article</a>
+                </p>
+                <p>Simple English: Restoring paintings with stickers.
+                </p>
+            </div>
+        </div>
+        <div style="flex: 1; overflow: hidden;">
+            <img src="images/nature-cover.png" alt="Masked art restoration"
+                style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <section style="background-color: white">
+        <div class="content inverted">
+            <h1>Degrees</h1>
+            <div style="margin-top: 2rem; text-align: left;">
+                <h2 style="font-size: 1.5rem;">MIT</h2>
+                <p>Master’s in Mechanical Engineering (June 2023)</p>
+                <p>PhD in Mechanical Engineering (drop out 2025)</p>
+
+                <h2 style="font-size: 1.5rem; margin-top: 2rem;">UT Austin</h2>
+                <p>Bachelor’s of Science in Mechanical Engineering (June 2021)</p>
+                <p>Bachelor’s of Arts in Economics (June 2021)</p>
+            </div><br><br>
+            <p>Note: I go by Alex Kashkin and Alex Kachkine. The latter, un-pronounceable legal spelling is due to the French,
+                and I apologize on their behalf.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Alex Kashkin</p>
+    </footer>
+
 </body>
+
 </html>
