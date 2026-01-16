@@ -103,19 +103,19 @@
         }
 
         .marquee-wrapper {
-            overflow: hidden;
             width: 100%;
+            max-width: 90vw;
+            overflow: hidden;
             position: relative;
-            white-space: nowrap;
-            padding: 40px 0;
+            background: #ffffff;
+            padding: 30px 0;
         }
-
+        
         .marquee-content {
             display: flex;
             width: max-content;
-            height: 150px;
-            gap: 50px;
-            animation: scroll 30s linear infinite;
+            flex-wrap: nowrap;
+            animation: scroll 20s linear infinite;
         }
 
         .marquee-content img {
@@ -152,6 +152,7 @@
             <p class="inverted"><a href="mailto:alexkashkin@gmail.com" style="color:rgb(0, 48, 120)">Contact me</a></p>
         </div>
     </section>
+
     <section>
         <div class="content">
             <h1>Partners and angels;</h1>
@@ -177,24 +178,29 @@
                 space propulsion, and
                 other fields.</p>
             <p>Some of my research was <a href="https://scholar.google.com/citations?user=lV0oWY4AAAAJ&hl=en"
-                    style="color: var(--bg); text-decoration: none; border-bottom: 1px solid var(--subtext);">published</a>.
+                    style="color: rgb(0, 48, 120);">published</a>.
                 Some of my efforts made headlines:
             </p>
             <div class="marquee-wrapper" style="margin-top:5vh">
                 <div class="marquee-content">
-                    <a href="https://www.nytimes.com/2025/08/22/world/europe/art-restoration-ai-innovation.html" target="_blank">
+                    <a href="https://www.nytimes.com/2025/08/22/world/europe/art-restoration-ai-innovation.html"
+                        target="_blank">
                         <img src="images/nyt.png" alt="NYT">
                     </a>
-                    <a href="https://www.cnn.com/2025/08/26/style/video/art-ai-restoration-digital-mask-digvid" target="_blank">
+                    <a href="https://www.cnn.com/2025/08/26/style/video/art-ai-restoration-digital-mask-digvid"
+                        target="_blank">
                         <img src="images/cnn.png" alt="CNN">
                     </a>
-                    <a href="https://www.theguardian.com/science/2025/jun/11/researchers-create-ai-based-tool-that-restores-age-damaged-artworks-in-hours" target="_blank">
+                    <a href="https://www.theguardian.com/science/2025/jun/11/researchers-create-ai-based-tool-that-restores-age-damaged-artworks-in-hours"
+                        target="_blank">
                         <img src="images/guardian.png" alt="Guardian">
                     </a>
-                    <a href="https://www.cbsnews.com/boston/video/mit-engineers-develop-mask-to-repair-aging-artwork/" target="_blank">
+                    <a href="https://www.cbsnews.com/boston/video/mit-engineers-develop-mask-to-repair-aging-artwork/"
+                        target="_blank">
                         <img src="images/cbs.png" alt="CBS">
                     </a>
-                    <a href="https://www.telegraph.co.uk/news/2025/06/11/artificial-intelligence-can-restore-artworks-quicker-better/" target="_blank">
+                    <a href="https://www.telegraph.co.uk/news/2025/06/11/artificial-intelligence-can-restore-artworks-quicker-better/"
+                        target="_blank">
                         <img src="images/telegraph.png" alt="Telegraph">
                     </a>
                     <a href="https://spectrum.ieee.org/digital-art-restoration-mask" target="_blank">
@@ -238,7 +244,8 @@
                 <p>Bachelor’s of Science in Mechanical Engineering (June 2021)</p>
                 <p>Bachelor’s of Arts in Economics (June 2021)</p>
             </div><br><br>
-            <p>Note: I go by Alex Kashkin and Alex Kachkine. The latter, un-pronounceable legal spelling is due to the French,
+            <p>Note: I go by Alex Kashkin and Alex Kachkine. The latter, un-pronounceable legal spelling is due to the
+                French,
                 and I apologize on their behalf.</p>
         </div>
     </section>
